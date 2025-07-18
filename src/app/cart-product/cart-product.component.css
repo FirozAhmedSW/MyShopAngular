@@ -1,0 +1,25 @@
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+}
+
+.cartImage {
+    height: 75px;
+    width: 84px;
+    float: left;
+    margin-right: 16px;
+    border: 1px solid gray;
+    border-radius: 14px;
+}
+
+.ordersummary {
+    height: 218px;
+}
+
+.chackbox{
+    float: left;
+    width: 31px;
+    margin-top: 26px;
+}

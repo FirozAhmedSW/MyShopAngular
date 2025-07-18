@@ -1,0 +1,48 @@
+<div class="main_content">
+  <div class="main_content_container">
+    <div class="nav_section d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+      <!-- Logo -->
+      <img class="logoImage" (click)="MainLogoMethod()" src="../../assets/main logo.png" alt="Logo" />
+
+      <!-- Category Dropdown -->
+      <select id="CategoryId" class="form-select category_section" (change)="CategoryChanged($event)">
+        <option value="0">All Category</option>
+        <option *ngFor="let item of CategoryList" [value]="item.id">{{ item.name }}</option>
+      </select>
+
+      <!-- Search Input -->
+      <div class="searchbtn d-flex align-items-center">
+        <input type="search" placeholder="Search" class="searchInput form-control me-2" />
+        <button type="button" class="BtnSearch btn btn-primary">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+
+      <!-- User Image -->
+      <div class="UserImage">
+        <img [src]="'data:image/jpg;base64,' + ImageSource.image" alt="User" />
+      </div>
+
+      <!-- ✅ FIXED Dropdown for User Menu -->
+      <div class="DrepUser dropdown">
+        <button class="UseName dropdown-toggle btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ UserName }}
+        </button>
+        <ul class="dropdown-menu UseManu">
+          <li><a class="dropdown-item" (click)="MainLogoMethod()">Home</a></li>
+          <li><a class="dropdown-item" (click)="ManagePageMethod()">My Profile</a></li>
+          <li><a class="dropdown-item" (click)="OrderDetailsMethod()">Order Details</a></li>
+          <li><a class="dropdown-item" (click)="LogOutMethod()">Log Out</a></li>
+        </ul>
+      </div>
+
+      <!-- Cart with Notification -->
+      <span class="LoginOUtBtn d-flex align-items-center position-relative" (click)="CartMethod()">
+        <img src="../../assets/Cutlogo.png" class="imagesize" alt="Cart" />
+        <span class="catrText position-absolute">5</span>
+      </span>
+
+    </div>
+  </div>
+</div>

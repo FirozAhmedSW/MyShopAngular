@@ -1,0 +1,22 @@
+.user-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+form .form-control {
+  border-radius: 0.5rem;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+button {
+  border-radius: 0.5rem;
+}

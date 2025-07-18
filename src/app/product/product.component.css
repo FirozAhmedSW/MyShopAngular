@@ -1,0 +1,28 @@
+
+
+
+
+.borderBox{
+    box-shadow: inset 0px 0px 20px -7px;
+}
+
+.Product_image{
+    color: red;
+}
+.mainBox{
+    border: 1px solid #efe5e5;
+    margin-right: 31px;
+    width: 298px;
+    border-radius: 21px;
+}
+
+.Discription_hight{
+    padding: 20px;
+}
+.ProductImage{
+    height: 196px;
+    width: 262px;
+    margin-left: 5px;
+    margin-top: 16px;
+    border-radius: 17px;
+}

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row my-2">
+    <div class="col-md-8 product_list">
+      <div class="my-3">
+        <input type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()" class="form-check-input">
+        <span class="mx-2">Select All Product {{selectedCheckboxes.length}} Items is Selected</span>
+      </div>
+      <div class="mb-2 bg-light" *ngFor="let item of ProductList">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="chackbox">
+                  <input type="checkbox" [(ngModel)]="item.selected" (change)="checkboxChanged(item)" class="form-check-input">
+                </div>
+                <div class="cartImage">
+                  <img class="ProductImage" [src]="'data:image/jpg;base64,' + item.Image" alt="Image">
+                </div>
+                <span class="card-title d-inline-block">Product Name: {{item.ProductName}}</span>
+                <br>
+              </div>
+              <div class="col-md-5">
+                <span>Price : {{item.Price}} Taka</span>
+                <br>
+                <br>
+                <button class="BtnDele btn btn-danger" (click)="DeletedMethod(item)">Remove Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 ordersummary bg-light">
+      <div class="orderList">
+        <h3>Order Summary</h3>
+        <p>Sub Total: {{TotalPrice}}</p>
+        <p>Shipping Fee: ৳ 55</p>
+        <div class="TotalBlance">
+          <p>Total: <span *ngIf="TotalPrice">৳{{TotalPrice + 55}}</span></p>
+        </div>
+        <button type="button" class="btn btn-success" (click)="OrderBtn()">
+          PROCEED TO CHECKOUT ({{ selectedCheckboxes.length }})
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

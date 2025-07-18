@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Product List</h1>
+  <div class="col">
+    <div class="row">
+      <div class="col-md-3 p-2" *ngFor="let item of ProductList">
+        <div class="card">
+          <div class="card-body text-center">
+            <div class="imagebox">
+              <img class="ProductImage" [src]="'data:image/jpg;base64,' + item.image" alt="Image">
+            </div>
+            <h3 class="card-title mt-2 text-center">{{ item.productName }}</h3>
+            <h4 class="text-danger">Price : ৳{{ item.price }}</h4>
+            <p class="card-text">Description: {{ item.description }}</p>
+            <button class="btn btn-success" (click)="CartProductBtn(item)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

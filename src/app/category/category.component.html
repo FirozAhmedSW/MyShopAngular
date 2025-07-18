@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="my-4 logo-section">
+      <h1 class="text-center text-secondary">My Shop Category List</h1>
+    </div>
+    <div class="p-2 header_Section">
+        <button (click)="ModelOpernMethod()" class="btn btn-info m-2">Add Category</button>
+        <button (click)="CategoryDeletedMethod()" class="btn btn-danger">Deleted Category</button>
+    </div>
+
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let UPost of UserList" (click)="RowClickMethod(UPost)" [ngClass]="Id==UPost.id ? 'table-info':''" (dblclick)="DblClickMethod(UPost)">
+                <td>{{UPost.id}}</td>
+                <td>{{UPost.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" hidden id="categoryModel" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Category Name</label>
+                <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="categoryC.Name"  name="Category">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="CloseMethod()" id="ModelClose" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" *ngIf="SaveUpdateView" (click)="AddSaveChangeMethod()">Save changes</button>
+          <button type="button" class="btn btn-primary" *ngIf="!SaveUpdateView" (click)="UpdateCategoryMethod()">Update Category</button>
+        </div>
+      </div>
+    </div>
+  </div>

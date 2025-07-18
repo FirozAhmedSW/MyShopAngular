@@ -1,0 +1,119 @@
+.main_content_container {
+    max-width: 1281px;
+    margin: auto;
+    padding: 0px 0px;
+}
+
+
+
+
+
+.main_content {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.nav_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logoImage {
+    width: 40px;
+    cursor: pointer;
+}
+
+.category_section {
+    padding: 5px 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    width: 200px;
+}
+
+.searchbtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.searchInput {
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.BtnSearch {
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+}
+
+.UserImage img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.DrepUser {
+    position: relative;
+}
+
+.UseName {
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+    color: #333;
+}
+
+.UseManu {
+    margin-top: 10px;
+    min-width: 160px;
+}
+
+.UseManu .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.UseManu .dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.LoginOUtBtn {
+    position: relative;
+    cursor: pointer;
+}
+
+.imagesize {
+    width: 40px;
+    height: 40px;
+}
+
+.catrText {
+    background-color: #fe9a3e;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}

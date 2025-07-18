@@ -1,0 +1,16 @@
+.Content{
+    width: 500px;
+    margin: 0 auto;
+}
+.Logo_section{
+    margin: 0 auto;
+}
+.space_contant{
+    height: 100px;
+}
+.sineupbtn :hover{
+    color: red;
+}
+.sineupbtn{
+    color: green;
+}

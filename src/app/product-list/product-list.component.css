@@ -1,0 +1,10 @@
+img {
+    width: 278px;
+    height: 203px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.bordert {
+    border-top: 1px solid #aaa;
+    position: relative;
+}
