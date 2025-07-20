@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Product } from './Product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -21,11 +22,23 @@ export class ProductComponent implements OnInit, OnChanges {
   CategoryView: boolean = false;
   ProductImageStore: any;
 
-  constructor(private Services: ApiService) { }
+  constructor(private Services: ApiService ,private router: Router) { }
 
   ngOnInit() {
     this.getrequest();
     this.GetCategory();
+  }
+
+  Redirectuser(){
+    this.router.navigateByUrl('header');
+  }
+
+
+
+  LogoutMethod(){
+    this.Services.isloginSubject.next(false);
+    localStorage.clear();
+    this.router.navigateByUrl('/');
   }
 
   ngOnChanges(changes: SimpleChanges) {

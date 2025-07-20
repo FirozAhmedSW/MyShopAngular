@@ -8,11 +8,12 @@ import { ApiService } from './api.service';
 })
 export class AppComponent implements OnInit {
   title = 'angularApp';
-  AccountIsLogind: boolean = true;
+  AccountIsLogind: boolean = false;
 
   constructor(private services: ApiService) {}
 
   ngOnInit(): void {
+    debugger
     this.AccountIsLogind = this.services.IsloginCheack();
 
     this.services.isloginSubject.subscribe((res: boolean) => {

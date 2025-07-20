@@ -1,10 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="AccountIsLogind"></app-navbar>
 <div style="min-height: 100vh;">
     <router-outlet></router-outlet>
 </div>
-
-
-<!-- <app-Navbar *ngIf="AccountIsLogind"></app-Navbar>
-<div style="min-height: 100vh;">
-    <router-outlet></router-outlet>
-</div> -->

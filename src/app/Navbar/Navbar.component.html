@@ -1,6 +1,6 @@
 <div class="main_content">
   <div class="main_content_container">
-    <div class="nav_section d-flex align-items-center justify-content-between flex-wrap gap-3">
+    <div class="nav_section ">
 
       <!-- Logo -->
       <img class="logoImage" (click)="MainLogoMethod()" src="../../assets/main logo.png" alt="Logo" />
@@ -21,7 +21,7 @@
 
       <!-- User Image -->
       <div class="UserImage">
-        <img [src]="'data:image/jpg;base64,' + ImageSource.image" alt="User" />
+        <img (click)="MainLogoMethod()" [src]="'data:image/jpg;base64,'  + ImageSource.image" alt="User" />
       </div>
 
       <!-- ✅ FIXED Dropdown for User Menu -->
@@ -40,7 +40,7 @@
       <!-- Cart with Notification -->
       <span class="LoginOUtBtn d-flex align-items-center position-relative" (click)="CartMethod()">
         <img src="../../assets/Cutlogo.png" class="imagesize" alt="Cart" />
-        <span class="catrText position-absolute">5</span>
+        <span class="catrText position-absolute">{{cartNumber}}</span>
       </span>
 
     </div>

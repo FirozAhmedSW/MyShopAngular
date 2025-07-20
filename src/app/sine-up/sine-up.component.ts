@@ -26,7 +26,8 @@ export class SineUpComponent implements OnInit {
     formData.append('object', JSON.stringify(this.user));
     this.services.PostUser(formData).subscribe(
       (res) => {
-        console.log(res);
+        debugger
+        //console.log(res);
         this.router.navigate([""]);
       }
     )

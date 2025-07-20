@@ -4,7 +4,10 @@
     padding: 0px 0px;
 }
 
-
+*{
+    margin: 0px;
+    padding: 0px;
+}
 
 
 
@@ -27,14 +30,14 @@
 .nav_section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
+    /* gap: 15px; */
 }
 
 .logoImage {
     width: 40px;
     cursor: pointer;
+    margin-right: 60px;
 }
 
 .category_section {
@@ -42,6 +45,7 @@
     border-radius: 5px;
     min-width: 150px;
     width: 200px;
+    margin-right: 100px;
 }
 
 .searchbtn {
@@ -51,9 +55,10 @@
 }
 
 .searchInput {
-    width: 200px;
+width: 355px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    padding: 5px 7px;
 }
 
 .BtnSearch {
@@ -69,6 +74,7 @@
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #ccc;
+    margin-left: 182px;
 }
 
 .DrepUser {
@@ -104,6 +110,7 @@
 .imagesize {
     width: 40px;
     height: 40px;
+    margin-left: 50px;
 }
 
 .catrText {
