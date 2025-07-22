@@ -33,6 +33,7 @@ export class ApiService {
 
 
   IsloginCheack(): boolean {
+    debugger
     let result = false;
     if (localStorage.getItem("Token") != null) {  
       result = true;
@@ -120,6 +121,8 @@ export class ApiService {
   PutUser(data: any): Observable<any> {
     return this.http.put<any>("https://localhost:7004/api/User/UpdateUser", data, this.config)
   }
+
+  
   DeletedUser(id: any): Observable<any> {
     return this.http.delete<any>("https://localhost:7004/api/User/DeletedUser?Id=" + id, this.config)
   }

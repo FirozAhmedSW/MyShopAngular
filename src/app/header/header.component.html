@@ -1,69 +1,68 @@
 <div class="container">
-   <div class="heaer bg-light" style="height: 100px; width: 100%;">
-      <span class="text-center text-success hader">Welcome To Our Page</span>
-      <button class="btn two float-end my-2" (click)="makePdf()">Generate PDF</button>
-   </div>
-   <div class="BtnInfo one p-2" style="height: 60px;">
-      <button class="btn btn-success float-end mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="AddUserMethod()">Add New List</button>
-      <button class="btn btn-primary float-end mx-3" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalid" (click)=" EditUserMethod()">Update</button>
-      <button class="btn btn-danger float-end mx-3" (click)=" DeletedUserMethod()">Deleted</button>
-   </div>
+  <!-- Header -->
+  <div class="heaer bg-light d-flex justify-content-between align-items-center px-3" style="height: 100px; width: 100%;">
+    <span class="text-success h4 m-0">Welcome To Our Page</span>
+    <button class="btn btn-warning" (click)="makePdf()">📄 Generate PDF</button>
+  </div>
 
-   <!---Ag-Grid-Is-Here---->
-   <!-- <ag-grid-angular class="ag-theme-alpine" style="height: 400px;width: 100%;" [rowData]="rowData"
-      [columnDefs]="colDefs" rowSelection="single" (gridReady)="onGridReady($event)"
-      (selectionChanged)="OnselectionChanged()">
-   </ag-grid-angular> -->
-   <!---Ag-Grid-Is-Here---->
+  <!-- Buttons -->
+  <div class="BtnInfo one p-2 d-flex justify-content-end gap-2" style="height: 60px;">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="AddUserMethod()">➕ Add New List</button>
+    <button class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalid" (click)="EditUserMethod()">✏️ Update</button>
+    <button class="btn btn-danger" (click)="DeletedUserMethod()">🗑️ Delete</button>
+  </div>
 
-   <!---END HERE JD PDF ----->
-   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!-- AG Grid -->
+<ag-grid-angular class="ag-theme-alpine w-100" style="height: 400px;"
+  [rowData]="rowData"
+  [columnDefs]="colDefs"
+  rowSelection="single"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="OnselectionChanged()">
+</ag-grid-angular>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">User Info</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="name" name="name">
             </div>
-            <div class="modal-body">
-               <form>
-                  <div class="mb-3">
-                     <label for="exampleInputEmail1" class="form-label">Your Name</label>
-                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Your Name" [(ngModel)]="name" name="name">
-                  </div>
-                  <div class="mb-3">
-                     <label for="oneteow" class="form-label">Email Address</label>
-                     <input type="email" class="form-control" id="oneteow" placeholder="Your Email Address"
-                        [(ngModel)]="email" name="email">
-                  </div>
-                  <div class="mb-3">
-                     <label for="threefof" class="form-label">Password</label>
-                     <input type="password" class="form-control" id="threefof" placeholder="Password"
-                        [(ngModel)]="password" name="password">
-                  </div>
-                  <div class="mb-3">
-                     <label for="fibe" class="form-label">Your Address</label>
-                     <input type="text" class="form-control" id="fibe" placeholder="Address" [(ngModel)]="address"
-                        name="address">
-                  </div>
-                  <div class="mb-3">
-                     <label for="ninet" class="form-label">Your Mobile Number</label>
-                     <input type="text" class="form-control" id="ninet" placeholder="Your Mobile Number"
-                        [(ngModel)]="number" name="number">
-                  </div>
-                  <div class="mb-3">
-                     <label for="exampleInputPassword1" class="form-label">Your Bai Data</label>
-                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Bio Data"
-                        [(ngModel)]="about" name="about">
-                  </div>
-               </form>
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="Your Email Address" [(ngModel)]="email" name="email">
             </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="SaveChangeMethod()">Save
-                  changes</button>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
             </div>
-         </div>
+            <div class="mb-3">
+              <label class="form-label">Your Address</label>
+              <input type="text" class="form-control" placeholder="Address" [(ngModel)]="address" name="address">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your Mobile Number</label>
+              <input type="text" class="form-control" placeholder="Your Mobile Number" [(ngModel)]="number" name="number">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your Bio Data</label>
+              <input type="text" class="form-control" placeholder="Your Bio Data" [(ngModel)]="about" name="about">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">❌ Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="SaveChangeMethod()">💾 Save changes</button>
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
 </div>
