@@ -36,6 +36,7 @@ export class ApiService {
     debugger
     let result = false;
     if (localStorage.getItem("Token") != null) {  
+      debugger
       result = true;
     }
     return result;
@@ -59,6 +60,7 @@ export class ApiService {
   }
   //Get Card Product
   GetCardProduct(Id: any): Observable<any> {
+    debugger
     return this.http.get<any>("https://localhost:7004/api/CartProduct/GetAll?Id=" + Id, this.config)
   }
   DeletedCartProduct(id: any): Observable<any> {

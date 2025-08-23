@@ -8,6 +8,7 @@ import { ApiService } from './api.service';
 })
 export class AppComponent implements OnInit {
   title = 'angularApp';
+
   AccountIsLogind: boolean = false;
 
   constructor(private services: ApiService) {}

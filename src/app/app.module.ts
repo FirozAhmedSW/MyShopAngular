@@ -17,7 +17,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ManageAccountComponent } from './manage-account/manage-account.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { SineUpComponent } from './sine-up/sine-up.component';
-import { ToastrModule,ToastrService } from 'ngx-toastr'
+import { ToastrModule,ToastrService } from 'ngx-toastr';
+import { ProductViewComponent } from './product-view/product-view.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ToastrModule,ToastrService } from 'ngx-toastr'
     ProductListComponent,
     ManageAccountComponent,
     OrderDetailsComponent,
-    SineUpComponent
+    SineUpComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,

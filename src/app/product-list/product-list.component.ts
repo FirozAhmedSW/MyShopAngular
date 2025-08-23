@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +14,8 @@ export class ProductListComponent implements OnInit {
   constructor(
     private services: ApiService,
     private toaster: ToastrService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +30,13 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+
+
+ProductViewmethod(ProductObj: any) {
+  this.router.navigate(['/product-view', ProductObj.id]);
+}
+
+
   GetAllProduct() {
     this.services.GetProduct().subscribe(
       (res) => {
@@ -37,6 +45,8 @@ export class ProductListComponent implements OnInit {
     );
   }
 
+
+  
   GetProductByCategory(categoryId: number) {
     this.services.GetProduct().subscribe(
       (res: any[]) => {

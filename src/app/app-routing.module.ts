@@ -11,6 +11,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ManageAccountComponent } from './manage-account/manage-account.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { SineUpComponent } from './sine-up/sine-up.component';
+import { ProductViewComponent } from './product-view/product-view.component';
 const routes: Routes = [
   {path : '', component: LoginUserComponent},
   {path : 'mainComponent', component: MainContantComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path : 'productList',component: ProductListComponent},
   {path : 'manageAccount',component: ManageAccountComponent},
   {path : 'orderDetails',component: OrderDetailsComponent},
+  {path : 'product-view/:id',component: ProductViewComponent},
   {path : 'sineup',component: SineUpComponent},
 ];
 
