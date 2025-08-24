@@ -8,34 +8,40 @@ import { ApiService } from '../api.service';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
-  productId: any;
-  ProductList: any[] = [];
+  productId: number = 0;
+  product: any = null;   // ✅ একক product
 
-
-  constructor(private route: ActivatedRoute, private router: Router,private services: ApiService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private services: ApiService
+  ) { }
 
   ngOnInit(): void {
-    this.productId = this.route.snapshot.paramMap.get('id');
-    this.GetAllProduct();
+    const idParam = this.route.snapshot.paramMap.get('id');
+    if (idParam) {
+      this.productId = Number(idParam); 
+      this.GetSingleProduct();
+    }
   }
 
-GetAllProduct() {
-  debugger;
-  const tempId = Number(this.productId); // ✅ string → number convert
-
-  this.services.GetCardProduct(tempId).subscribe(
-    (res) => {
-      this.ProductList = res;
-    },
-    (err) => {
-      console.error("Error loading product:", err);
-    }
-  );
-}
-
-
+  GetSingleProduct() {
+    this.services.SingleProductGet(this.productId).subscribe(
+      (res: any) => {
+        this.product = res;  // ✅ শুধু একক object
+      },
+      (err) => {
+        console.error("Error loading product:", err);
+      }
+    );
+  }
 
   BacktoHome() {
     this.router.navigate(['/productList']);
+  }
+
+  CartProductBtn(product: any) {
+    console.log("Added to cart:", product);
+    // এখানে cart এ add করার logic লিখবেন
   }
 }

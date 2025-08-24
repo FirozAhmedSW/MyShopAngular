@@ -58,6 +58,12 @@ export class ApiService {
   GetProduct(): Observable<any> {
     return this.http.get<any>("https://localhost:7004/api/Product/GetAllProduct", this.config)
   }
+
+  SingleProductGet(id : any): Observable<any> {
+    return this.http.get<any>("https://localhost:7004/api/Product/GetSingleProduct?Id=" + id, this.config)
+  }
+
+
   //Get Card Product
   GetCardProduct(Id: any): Observable<any> {
     debugger

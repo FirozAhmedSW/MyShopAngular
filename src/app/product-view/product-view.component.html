@@ -1,19 +1,25 @@
-<div class="container">
-    <button class="float-end" (click)="BacktoHome()" >Back to Product list</button>
+<div class="container mt-4" *ngIf="product">
+  <button class="btn btn-secondary float-end mb-3" (click)="BacktoHome()">
+    Back to Product List
+  </button>
 
+  <div class="row">
+    <!-- Product Image -->
+    <div class="col-md-5 text-center">
+      <img class="img-fluid rounded shadow"
+           [src]="'data:image/jpg;base64,' + product.image"
+           alt="Product Image">
+    </div>
 
-    
-       <div class="col-md-3 p-2" *ngFor="let item of ProductList">
-        <div class="card">
-          <div class="card-body text-center">
-            <div class="imagebox" (click)="ProductViewmethod(item)">
-              <img class="ProductImage" [src]="'data:image/jpg;base64,' + item.image" alt="Image">
-            </div>
-            <h3 class="card-title mt-2 text-center">{{ item.productName }}</h3>
-            <h4 class="text-danger">Price : ৳{{ item.price }}</h4>
-            <p class="card-text">Description: {{ item.description }}</p>
-            <button class="btn btn-success" (click)="CartProductBtn(item)">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+    <!-- Product Details -->
+    <div class="col-md-7">
+      <h2 class="mb-3">{{ product.productName }}</h2>
+      <h4 class="text-danger mb-3">Price : ৳{{ product.price }}</h4>
+      <p class="mb-4"><strong>Description:</strong> {{ product.description }}</p>
+
+      <button class="btn btn-success btn-lg" (click)="CartProductBtn(product)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
 </div>
